@@ -1,0 +1,45 @@
+﻿@model List<FooterListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Inverse table</h4>
+            <p class="card-description">
+                Sayfa Sonu
+            </p>
+            <div class="table-responsive">
+                <table class="table table-gray">
+                    <thead>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th> Twitter </th>
+                                <td> @item.Twitter </td>
+                            </tr>
+                            <tr>
+                                <th> Instagram </th>
+                                <td> @item.Instagram </td>
+                            </tr>
+                            <tr>
+                                <th> Linkendin </th>
+                                <td> @item.LinkendIn </td>
+                            </tr>
+                            <tr>
+                                <th> Github </th>
+                                <td> @item.Github </td>
+                            </tr>
+                        <td>
+                            <a href="/Footer/UpdateFooter/@item.Id" class="btn btn-inverse-primary btn-fw">Güncelle</a>
+                        </td>
+                        }
+                    </thead>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

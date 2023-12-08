@@ -1,0 +1,47 @@
+﻿@model ContactCreateDto
+<!-- Contact Start -->
+<section class="py-5 wow fadeInUp" data-wow-delay="0.1s" id="contact">
+    <h1 class="title pb-3 mb-5">İletişim</h1>
+    <p class="mb-4">İş ve İşbirlikleriniz için iletişime geçebilirsiniz</a></p>
+    <section class="py-5 wow fadeInUp" data-wow-delay="0.1s" id="contact">
+        <form method="post" action="/Default/Contact">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control border-0 bg-secondary" name="Name" placeholder="Your Name">
+                        <label for="name">Adınız</label>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="email" class="form-control border-0 bg-secondary" name="Mail" placeholder="Your Email">
+                        <label for="email">Mail Adresiniz</label>
+                        <span asp-validation-for="Mail" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-floating">
+                        <input type="text" class="form-control border-0 bg-secondary" name="Subject" placeholder="Subject">
+                        <label for="subject">Konu</label>
+                        <span asp-validation-for="Subject" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-floating">
+                        <textarea class="form-control border-0 bg-secondary" name="Message" placeholder="Leave a message here" style="height: 200px"></textarea>
+                        <label for="message">Mesaj</label>
+                        <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <input type="hidden" name="Date" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")">
+                <input type="hidden" name="Status" value="false">
+
+                <div class="col-12">
+                    <button class="btn btn-primary w-100 py-3" type="submit">Mesajı Gönder</button>
+                </div>
+            </div>
+        </form>
+    </section>
+</section>

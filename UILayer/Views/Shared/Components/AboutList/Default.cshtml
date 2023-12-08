@@ -1,0 +1,64 @@
+﻿@model List<AboutListDto>
+
+<!-- About Start -->
+<section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+    @foreach (var item in Model)
+    {
+        <h1 class="title pb-3 mb-5">Hakkımda</h1>
+        <p>@item.Description</p>
+        <div class="row mb-4">
+            <div class="col-sm-6 py-1">
+                <span class="fw-medium text-primary">İsim:</span> @item.Name
+            </div>
+            <div class="col-sm-6 py-1">
+                <span class="fw-medium text-primary">Doğum Tarihi:</span> @item.Birthday.Value.ToString("MMMM yyyy")
+            </div>
+
+            <div class="col-sm-6 py-1">
+                <span class="fw-medium text-primary">Deneyim:</span> @item.Experience
+            </div>
+            <div class="col-sm-6 py-1">
+                <span class="fw-medium text-primary">Telefon Numarası:</span> @item.Phone
+            </div>
+            <div class="col-sm-6 py-1">
+                <span class="fw-medium text-primary">Email:</span> @item.Mail
+            </div>
+            <div class="col-sm-6 py-1">
+                <span class="fw-medium text-primary">Adres:</span> @item.Address
+            </div>
+            <div class="col-sm-6 py-1">
+                <span class="fw-medium text-primary">Durum:</span> @item.Freelance
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4 col-lg-6 col-xl-4">
+                <div class="d-flex bg-secondary p-4">
+                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">@item.Experience</h1>
+                    <div class="ps-3">
+                        <p class="mb-0">Yıllık</p>
+                        <h5 class="mb-0">Deneyim</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-6 col-xl-4">
+                <div class="d-flex bg-secondary p-4">
+                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">@item.Client</h1>
+                    <div class="ps-3">
+                        <p class="mb-0">Mutlu</p>
+                        <h5 class="mb-0">Müşteri</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-6 col-xl-4">
+                <div class="d-flex bg-secondary p-4">
+                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">@item.Prroject</h1>
+                    <div class="ps-3">
+                        <p class="mb-0">Tamamlanan</p>
+                        <h5 class="mb-0">Proje</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</section>

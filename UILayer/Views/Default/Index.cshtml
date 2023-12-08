@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("MainList")
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <div class="container">
+        <div class="row g-5">
+            @await Component.InvokeAsync("NavbarList")
+            <div class="col-lg-8">
+                @await Component.InvokeAsync("AboutList")
+
+                @await Component.InvokeAsync("EducationList")
+
+                @await Component.InvokeAsync("SkillList")
+
+                @await Html.PartialAsync("SubscribePartial")
+
+                @await Component.InvokeAsync("ServiceList")
+
+                @await Component.InvokeAsync("PortfolioList")
+
+                @await Component.InvokeAsync("TestimonialList")
+
+                @await Html.PartialAsync("ContactPartial")
+
+                @await Component.InvokeAsync("FooterList")
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/bootstrap-cv-resume-template/lib/wow/wow.min.js"></script>
+    <script src="/bootstrap-cv-resume-template/lib/typed/typed.min.js"></script>
+    <script src="/bootstrap-cv-resume-template//bootstrap-cv-resume-template/lib/easing/easing.min.js"></script>
+    <script src="/bootstrap-cv-resume-template/lib/waypoints/waypoints.min.js"></script>
+    <script src="/bootstrap-cv-resume-template/lib/counterup/counterup.min.js"></script>
+    <script src="/bootstrap-cv-resume-template/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/bootstrap-cv-resume-template/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/bootstrap-cv-resume-template/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="/bootstrap-cv-resume-template/mail/jqBootstrapValidation.min.js"></script>
+    <script src="/bootstrap-cv-resume-template/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/bootstrap-cv-resume-template/js/main.js"></script>
+</body>
+</html>
+

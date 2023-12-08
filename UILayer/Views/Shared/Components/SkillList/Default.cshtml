@@ -1,0 +1,29 @@
+﻿@model List<SkillListDto>
+
+<!-- Skills Start -->
+<section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+    <h1 class="title pb-3 mb-5">Yetenekler</h1>
+    <div class="row">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="col-sm-6">
+                <div class="skill mb-4">
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-2">@Model[i].SkillName</p>
+                        <p class="mb-2">@Model[i].Degree</p>
+                    </div>
+                    <div class="progress">
+                        @if (i % 2 == 0)
+                        {
+                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="@Model[i].Degree" aria-valuemin="0" aria-valuemax="100"></div>
+                        }
+                        else
+                        {
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="@Model[i].Degree" aria-valuemin="0" aria-valuemax="100"></div>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

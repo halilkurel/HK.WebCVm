@@ -1,0 +1,28 @@
+﻿@model List<PortfolioListDto>
+
+<!-- Portfolio Start -->
+<section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+    <h1 class="title pb-3 mb-5">Portföyüm</h1>
+    <div class="row">
+        <div class="col-12">
+            <div class="row portfolio-container">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-6 mb-4 portfolio-item">
+                        <div class="position-relative overflow-hidden mb-2">
+                            <img class="img-fluid w-100" src="@item.Image" alt="@item.Name">
+                            <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                <a href="@item.Image" data-lightbox="portfolio">
+                                    <i class="bi bi-plus text-light"></i>
+                                </a>
+                            </div>
+                            <div class="portfolio-link">
+                                <a href="@item.Url" target="_blank">Projenin Tamamı İçin Tıklayınız</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

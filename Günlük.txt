@@ -1,0 +1,14 @@
+Common Katmaný oluþturulup Response Yapýsý kuruldu . Fakat çalýþmadý. Detaylý bakýlýp Bussiness katmanýnda uygulanacak. 30.01.23
+Contact Serviceyi yazmaya Devam edilecek 01.12.20223
+Dashboard a devam edilecek 01.12.23
+DashBoard'da OrderStatus kýsmýna kadar gelindi 03.12.2023
+Dashboard Mesaj kýsmý bitti Portffolio Side Düzenlenecek 03.12.2023
+
+
+
+YAPILACAKLAR
+-Toplam ziyaretçi sayýsýný dashboarda gösterilecek
+-Mail Kýsmý bitirilecek
+-Image sistemi yapýlacak
+-Bütçe Geçmiþi Grafiðine bakýlacak
+-ToDoList Bölümünde ekleme ve listeleme iþlemi tamam fakat güncelleme ve silme iþlemi henüz olmadý

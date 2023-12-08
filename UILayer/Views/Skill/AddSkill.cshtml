@@ -1,0 +1,27 @@
+﻿@model SkillCreateDto
+@{
+    ViewData["Title"] = "AddSkill";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Default form</h4>
+            <p class="card-description"> Yetenek Ekle </p>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="SkillName">Yetenek Adı</label>
+                    <input type="text" class="form-control" id="SkillName" name="SkillName" placeholder="Yetenek Adı">
+                    <span asp-validation-for="SkillName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Degree">Derece</label>
+                    <input type="text" class="form-control" id="Degree" name="Degree" placeholder="Derece">
+                    <span asp-validation-for="Degree" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

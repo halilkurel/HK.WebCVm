@@ -1,0 +1,40 @@
+﻿@model PortfolioUpdateDto
+@{
+    ViewData["Title"] = "UpdatePortfolio";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Default form</h4>
+            <p class="card-description"> Referans Güncelle </p>
+            @using (Html.BeginForm("UpdatePortfolio", "Portfolio", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.Id)
+                <br />
+                @Html.Label("Proje Adı")
+                @Html.TextBoxFor(x => x.Name, new {@class ="form-control"})
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <br />
+                @Html.Label("Resim")
+                @Html.TextBoxFor(x => x.Image, new {@class ="form-control"})
+                <span asp-validation-for="Image" class="text-danger"></span>
+                <br />
+                @Html.Label("Proje Yolu")
+                @Html.TextBoxFor(x => x.Url, new {@class ="form-control"})
+                <span asp-validation-for="Url" class="text-danger"></span>
+                <br />
+                @Html.Label("Proje Özelliği")
+                @Html.TextBoxFor(x => x.Architectural, new {@class ="form-control"})
+                <span asp-validation-for="Url" class="text-danger"></span>
+                <br />
+                @Html.Label("Yayınlanma Tarihi")
+                @Html.TextBoxFor(x => x.ReleaseDate, new {@class ="form-control"})
+                <span asp-validation-for="Url" class="text-danger"></span>
+                <br />
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            }
+        </div>
+    </div>
+</div>

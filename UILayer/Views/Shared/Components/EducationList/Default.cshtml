@@ -1,0 +1,14 @@
+﻿@model List<EducationListDto>
+<section class="py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <h1 class="title pb-3 mb-5">Eğitim Hayatım</h1>
+    @foreach(var item in Model)
+    {
+        <div class="border-start border-2 border-light pt-2 ps-5">
+            <div class="position-relative mb-4">
+                <span class="bi bi-arrow-right fs-4 text-light position-absolute" style="top: -5px; left: -50px;"></span>
+                <h5 class="mb-1">@item.Name</h5>
+                <p class="mb-2">@item.Major | <small>@item.StartingDate.Value.ToString("yyyy") - @item.EndDate.Value.ToString("yyyy")</small></p>
+            </div>
+        </div>
+    }
+</section>

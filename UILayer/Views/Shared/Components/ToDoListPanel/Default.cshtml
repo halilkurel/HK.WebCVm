@@ -1,0 +1,42 @@
+﻿@model List<ListToDoListDto>
+<div class="col-md-12 col-xl-4 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yapılacaklar</h4>
+            <form method="post" action="@Url.Action("AddToDoList", "ToDoList")">
+                <input type="text" name="Contect" placeholder="Yeni görev girin" required />
+                <button type="submit">Ekle</button>
+            </form>
+            <div class="list-wrapper">
+                <ul class="d-flex flex-column-reverse text-white todo-list todo-list-custom">
+                    @foreach(var item in Model)
+                    {
+                        if(item.Status==false)
+                        {
+                            <li class="completed">
+                                <div class="form-check form-check-primary">
+                                    <label class="form-check-label">
+                                        <input class="checkbox" type="checkbox" checked> @item.Contect
+                                    </label>
+                                </div>
+                                <i class="remove mdi mdi-close-box"></i>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <div class="form-check form-check-primary">
+                                    <label class="form-check-label">
+                                        <input class="checkbox" type="checkbox"> @item.Contect
+                                    </label>
+                                </div>
+                                <i class="remove mdi mdi-close-box"></i>
+                            </li>
+                        }
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

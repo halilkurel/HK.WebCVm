@@ -1,0 +1,40 @@
+﻿<style>
+    /* Bu stil kodu sadece bu sayfa için geçerlidir. */
+    .custom-margin {
+        margin-top: 50px; /* İstenilen boşluk miktarını ayarlayabilirsiniz */
+    }
+
+
+</style>
+
+@model List<ContactListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="col-md-6 grid-margin stretch-card custom-margin">
+    <div class="card">
+        @foreach (var item in Model)
+        {
+            <div class="card-body">
+                <h4 class="card-title">@item.Name</h4>
+                <p class="card-description">
+                    <strong>Email:</strong> @item.Mail <br />
+                    <strong>Date:</strong> @item.Date
+                </p>
+                <p>
+                    <strong>Subject:</strong> @item.Subject <br />
+                    <strong>Message:</strong> @item.Message
+                </p>
+
+                <div class="action-buttons">
+                    <td class="action-buttons">
+                        <a href="/Message/DeleteMessage/@item.Id" class="btn btn-inverse-danger btn-fw">Sil</a>
+                    </td>
+                </div>
+            </div>
+        }
+    </div>
+</div>

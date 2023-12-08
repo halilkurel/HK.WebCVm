@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        
+        @await Component.InvokeAsync("FeatureStatistics")
+        <div class="row">
+            <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Bütçe Geçmişi</h4>
+                        <canvas id="transaction-history" class="transaction-chart"></canvas>
+                        <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                            <div class="text-md-center text-xl-left">
+                                <h6 class="mb-1">Proje Ödemeleri</h6>
+                                <p class="text-muted mb-0">@DateTime.Now.ToString("dd MMM yyyy, hh:mm tt")</p>
+                            </div>
+                            <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                                <h6 class="font-weight-bold mb-0">₺7000</h6>
+                            </div>
+                        </div>
+                        <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                            <div class="text-md-center text-xl-left">
+                                <h6 class="mb-1">Giderler</h6>
+                                <p class="text-muted mb-0">@DateTime.Now.ToString("dd MMM yyyy, hh:mm tt")</p>
+                            </div>
+                            <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                                <h6 class="font-weight-bold mb-0">$593</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("Last5Projects")
+        </div>
+        @await Component.InvokeAsync("StatisticcDashboard2")
+        <div class="row">
+            @await Component.InvokeAsync("MessageList")
+            @await Component.InvokeAsync("DashboardPortfolio")
+            @await Component.InvokeAsync("ToDoListPanel")
+        </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>

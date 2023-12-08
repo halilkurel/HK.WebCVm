@@ -1,0 +1,52 @@
+﻿@model List<ServicesListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var number = 0;
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Inverse table</h4>
+            <p class="card-description">
+                Hizmetlerim
+            </p>
+            <div class="table-responsive">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th> # </th>
+                            <th> Hizmet Adı </th>
+                            <th> Açıklaması </th>
+                            <th> İcon Kodu </th>
+                            <th>  </th>
+                            <th>  </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                            number += 1;
+                            <tr>
+                                <td> @number </td>
+                                <td> @item.Name </td>
+                                <td> @item.Description </td>
+                                <td> @item.Icon </td>
+                                <td class="action-buttons">
+                                    <a href="/Service/UpdateService/@item.Id" class="btn btn-inverse-success btn-fw">Günceller</a>
+                                </td>
+                                <td class="action-buttons">
+                                    <a href="/Service/DeleteService/@item.Id" class="btn btn-inverse-danger btn-fw">Sil</a>
+                                </td>
+                            </tr>
+                        }
+                        
+                    </tbody>
+                </table>
+                <br />
+                <a href="/Service/AddService/" class="btn btn-inverse-success btn-fw">Hizmet Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>

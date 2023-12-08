@@ -1,0 +1,41 @@
+﻿@model List<SubscribeListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    int number = 0;
+}
+
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Basic Table</h4>
+            <p class="card-description">
+                Bültene Üye Olan Mail Adresleri
+            </p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Mail Adresi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                            number += 1;
+                            <tr>
+                                <td>@number</td>
+                                <td>@item.Mail</td>
+                                <td class="action-buttons">
+                                    <a href="/Subscribe/DeleteSubscribe/@item.Id" class="btn btn-inverse-danger btn-fw">Sil</a>
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

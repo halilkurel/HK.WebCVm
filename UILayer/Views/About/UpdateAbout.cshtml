@@ -1,0 +1,66 @@
+﻿@model AboutUpdateDto
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Default form</h4>
+            <p class="card-description"> Hakkımda Güncelle </p>
+            @using (Html.BeginForm("UpdateAbout", "About", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.Id)
+                <br />
+                @Html.Label("İsim")
+                @Html.TextBoxFor(x => x.Name, new {@class ="form-control"})
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <br />
+                @Html.Label("Açıklama")
+                @Html.TextAreaFor(x => x.Description, new {@class ="form-control"})
+                <span asp-validation-for="Description" class="text-danger"></span>
+                
+                <br />
+                @Html.Label("Doğum Tarihi")
+                @Html.TextBoxFor(x => x.Birthday, new {@class ="form-control"})
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+                <br />
+                @Html.Label("Mezuniyet Derecesi")
+                @Html.TextBoxFor(x => x.Degree, new {@class ="form-control"})
+                <span asp-validation-for="Degree" class="text-danger"></span>
+                <br />
+                @Html.Label("Deneyim ")
+                @Html.TextBoxFor(x => x.Experience, new {@class ="form-control"})
+                <span asp-validation-for="Experience" class="text-danger"></span>
+                <br />
+                @Html.Label("Telefon Numarası")
+                @Html.TextBoxFor(x => x.Phone, new {@class ="form-control"})
+                <span asp-validation-for="Phone" class="text-danger"></span>
+                <br />
+                @Html.Label("Mail Adresi")
+                @Html.TextBoxFor(x => x.Mail, new {@class ="form-control"})
+                <span asp-validation-for="Mail" class="text-danger"></span>
+                <br />
+                @Html.Label("Adres")
+                @Html.TextBoxFor(x => x.Address, new {@class ="form-control"})
+                <span asp-validation-for="Address" class="text-danger"></span>
+                <br />
+                @Html.Label("Müsaitlik Durumu")
+                @Html.TextBoxFor(x => x.Freelance, new {@class ="form-control"})
+                <span asp-validation-for="Freelance" class="text-danger"></span>
+                <br />
+                @Html.Label("Müşteri Sayısı")
+                @Html.TextBoxFor(x => x.Client, new {@class ="form-control"})
+                <span asp-validation-for="Client" class="text-danger"></span>
+                <br />
+                @Html.Label("Biten Proje Sayısı")
+                @Html.TextBoxFor(x => x.Prroject, new {@class ="form-control"})
+                <span asp-validation-for="Prroject" class="text-danger"></span>
+                <br />
+
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            }
+        </div>
+    </div>
+</div>

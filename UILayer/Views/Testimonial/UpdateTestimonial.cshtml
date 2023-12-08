@@ -1,0 +1,39 @@
+﻿@model TestimonialUpdateDto
+
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Default form</h4>
+            <p class="card-description"> Referans Güncelle </p>
+            @using (Html.BeginForm("UpdateTestimonial", "Testimonial", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.Id)
+                <br />
+                @Html.Label("Adı ve Soyadı")
+                @Html.TextBoxFor(x => x.Name, new {@class ="form-control"})
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <br />
+                @Html.Label("Resim")
+                @Html.TextBoxFor(x => x.Image, new {@class ="form-control"})
+                <span asp-validation-for="Image" class="text-danger"></span>
+                <br />
+                @Html.Label("Ünvan")
+                @Html.TextBoxFor(x => x.Title, new {@class ="form-control"})
+                <span asp-validation-for="Title" class="text-danger"></span>
+                <br />
+                @Html.Label("Yorum")
+                @Html.TextBoxFor(x => x.Comment, new {@class ="form-control"})
+                <span asp-validation-for="Comment" class="text-danger"></span>
+                <br />
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            }
+        </div>
+    </div>
+</div>

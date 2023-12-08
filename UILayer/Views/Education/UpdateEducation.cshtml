@@ -1,0 +1,36 @@
+﻿@model EducationUpdateDto
+@{
+    ViewData["Title"] = "UpdateEducation";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Default form</h4>
+            <p class="card-description"> Eğitim Bilgileri Güncelle </p>
+            @using (Html.BeginForm("UpdateEducation", "Education", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.Id)
+                <br />
+                @Html.Label("Okul Adı")
+                @Html.TextBoxFor(x => x.Name, new {@class ="form-control"})
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <br />
+                @Html.Label("Bölüm Adı")
+                @Html.TextBoxFor(x => x.Major, new {@class ="form-control"})
+                <span asp-validation-for="Major" class="text-danger"></span>
+                <br />
+                @Html.Label("Başlangıç Tarihi")
+                @Html.TextBoxFor(x => x.StartingDate, new {@class ="form-control"})
+                <span asp-validation-for="StartingDate" class="text-danger"></span>
+                <br />
+                @Html.Label("Bitiş Tarihi")
+                @Html.TextBoxFor(x => x.EndDate, new {@class ="form-control"})
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+                <br />
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@model FooterUpdateDto
+@{
+    ViewData["Title"] = "UpdateFooter";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Default form</h4>
+            <p class="card-description"> Hakkımda Güncelle </p>
+            @using (Html.BeginForm("UpdateFooter", "Footer", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.Id)
+                <br />
+                @Html.Label("Twitter")
+                @Html.TextBoxFor(x => x.Twitter, new {@class ="form-control"})
+                <span asp-validation-for="Twitter" class="text-danger"></span>
+                <br />
+                @Html.Label("Instagram")
+                @Html.TextAreaFor(x => x.Instagram, new {@class ="form-control"})
+                <span asp-validation-for="Instagram" class="text-danger"></span>
+                <br />
+                @Html.Label("LinkendIn")
+                @Html.TextBoxFor(x => x.LinkendIn, new {@class ="form-control"})
+                <span asp-validation-for="LinkendIn" class="text-danger"></span>
+                <br />
+                @Html.Label("Github")
+                @Html.TextBoxFor(x => x.Github, new {@class ="form-control"})
+                <span asp-validation-for="Github" class="text-danger"></span>
+                <br />
+
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            }
+        </div>
+    </div>
+</div>

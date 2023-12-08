@@ -1,0 +1,62 @@
+﻿@model HeaderUpdateDto
+@{
+    ViewData["Title"] = "UpdateNavbar";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Default form</h4>
+            <p class="card-description"> Navbar Güncelle </p>
+            @using (Html.BeginForm("UpdateNavbar", "Navbar", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.Id)
+                <br />
+                @Html.Label("Resim")
+                @Html.TextBoxFor(x => x.Image, new {@class ="form-control"})
+                <span asp-validation-for="Image" class="text-danger"></span>
+                <br />
+                @Html.Label("İsim")
+                @Html.TextBoxFor(x => x.Name, new {@class ="form-control"})
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <br />
+                @Html.Label("Yetenek 1")
+                @Html.TextBoxFor(x => x.Title1, new {@class ="form-control"})
+                <span asp-validation-for="Title1" class="text-danger"></span>
+                <br />
+                @Html.Label("Yetenek 2")
+                @Html.TextBoxFor(x => x.Title2, new {@class ="form-control"})
+                <span asp-validation-for="Title2" class="text-danger"></span>
+                <br />
+                @Html.Label("Yetenek 3")
+                @Html.TextBoxFor(x => x.Title3, new {@class ="form-control"})
+                <span asp-validation-for="Title3" class="text-danger"></span>
+                <br />
+                @Html.Label("Yetenek 4")
+                @Html.TextBoxFor(x => x.Title4, new {@class ="form-control"})
+                <span asp-validation-for="Title4" class="text-danger"></span>
+                <br />
+                @Html.Label("Twitter")
+                @Html.TextBoxFor(x => x.Twitter, new {@class ="form-control"})
+                <span asp-validation-for="Twitter" class="text-danger"></span>
+                <br />
+                @Html.Label("İnstagram")
+                @Html.TextBoxFor(x => x.Instagram, new {@class ="form-control"})
+                <span asp-validation-for="Instagram" class="text-danger"></span>
+                <br />
+                @Html.Label("Linkendin")
+                @Html.TextBoxFor(x => x.Linkendln, new {@class ="form-control"})
+                <span asp-validation-for="Linkendln" class="text-danger"></span>
+                <br />
+                @Html.Label("Github")
+                @Html.TextBoxFor(x => x.Github, new {@class ="form-control"})
+                <span asp-validation-for="Github" class="text-danger"></span>
+                <br />
+
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model ServiceUpdateDto
+@{
+    ViewData["Title"] = "UpdateService";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Default form</h4>
+            <p class="card-description"> Hizmeti Güncelle </p>
+            @using (Html.BeginForm("UpdateService", "Service", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.Id)
+                <br />
+                @Html.Label("Hizmet Adı")
+                @Html.TextBoxFor(x => x.Name, new {@class ="form-control"})
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <br />
+                @Html.Label("Açıklama")
+                @Html.TextBoxFor(x => x.Description, new {@class ="form-control"})
+                <span asp-validation-for="Description" class="text-danger"></span>
+                <br />
+                @Html.Label("İcon Kodu")
+                @Html.TextBoxFor(x => x.Icon, new {@class ="form-control"})
+                <span asp-validation-for="Icon" class="text-danger"></span>
+                <br />
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            }
+        </div>
+    </div>
+</div>

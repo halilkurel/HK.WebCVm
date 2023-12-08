@@ -1,0 +1,20 @@
+﻿<!-- Testimonial Start -->
+<section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+    <h1 class="title pb-3 mb-5">Testimonial</h1>
+    <div class="owl-carousel testimonial-carousel">
+        @foreach (var item in Model)
+        {
+            <div class="text-left">
+                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                <p class="fs-4 mb-4">@item.Comment</p>
+                <div class="d-flex align-items-center">
+                    <img class="img-fluid" src="@item.Image" style="width: 60px; height: 60px;">
+                    <div class="ps-3">
+                        <p class="text-primary fs-5 mb-1">@item.Name</p>
+                        <i>@item.Title</i>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
